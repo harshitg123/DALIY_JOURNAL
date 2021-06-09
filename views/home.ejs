@@ -1,16 +1,27 @@
 <%- include("partials/header") -%>
 
-  <h1>Home</h1>
+  <h1>Hey, There</h1>
   <p><%= home %></p>
 
+<div class="container">
+  <div class="row row-cols-2">
   <% posts.forEach(function(post){ %>
-    <% let postContent = post.body %>
-    <h1><%= post.title %></h1>
-    <% if(postContent.length > 100){ %>
-    <p><%= post.body.substring(0, 100) + "..." %> <a class="readMore" href="/posts/<%= post._id %> ">Read More</a></p>
-    <% }else{ %>
-      <p><%= postContent %></p>
-    <% } %>
+  <% let postContent = post.body %>
+    <div class="col card mb-3">
+      <img class="tech-img" src="https://www.themileageclub.com/blog/wp-content/uploads/2016/06/Myths-About-European-Travel.jpg" class="card-img-top" alt="...">
+      <div class="card-body">
+
+        <h2 class="card-title"><%= post.title %></h2>
+        <% if(postContent.length > 100){ %>
+        <p class="card-text"><%= post.body.substring(0, 100) + "..." %> <a class="readMore" href="/posts/<%= post._id %> ">Read More</a></p>
+        <% }else{ %>
+          <p class="card-text"><%= postContent %></p>
+        <% } %>
+        <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+      </div>
+    </div>
   <% }) %>
+  </div>
+</div>
 
 <%- include("partials/footer") -%>
