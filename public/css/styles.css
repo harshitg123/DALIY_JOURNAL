@@ -26,19 +26,23 @@
   padding-left: 8px;
 }
 
-.footer-padding {
-	padding-bottom: 100px;
-}
-
 .footer {
-	text-align: center;
 	width: 100%;
-	height: 180px;
+  margin-top: 60px;
 	background-color: black;
+  height: 250px;
 }
 
-.footer p {
-	margin: 150px 0 0;
+.footer-msg{
+  padding: 25px 0 0;
+  color: gray;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.copyright {
+  text-align: center;
+  margin: 50px 40% 0;
 	font-size: 12px;
   color: #fff;
 }
@@ -64,5 +68,26 @@
 
 .tech-img{
   width: 609.1px;
-  height: 250px;
+  height: 280px;
+}
+
+.c-button{
+  border-radius: 1px;
+  border: 1px solid black;
+  background-color: transparent;
+  color: black;
+}
+
+.compose-btn{
+  margin-bottom: 50px;
+}
+
+.c-button:hover{
+  background-color: black;
+  color: white;
+}
+
+.single-post-img{
+  margin: 50px auto;
+  width: 800px;
 }

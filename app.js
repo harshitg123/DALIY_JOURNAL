@@ -29,6 +29,10 @@ const blogsSchema = {
   body: {
     type: String,
     required: true
+  },
+  image: {
+    type: String,
+    required: true
   }
 }
 
@@ -41,7 +45,7 @@ app.get("/posts/:post", function(req, res){
     if(!err){
       foundData.forEach(function(post){
         if(_.lowerCase(post._id) === _.lowerCase(req.params.post)){
-          res.render("post", {postTitle:post.title, postBody:post.body});
+          res.render("post", {postTitle:post.title, postBody:post.body, postImage: post.image});
         }
       })
     }
@@ -57,13 +61,13 @@ app.get("/", function(req, res){
   })
 });
 
-app.get("/about", function(req, res){
-  res.render("about", {about: aboutContent})
-});
-
-app.get("/contact", function(req, res){
-  res.render("contact", {contact: contactContent})
-});
+// app.get("/about", function(req, res){
+//   res.render("about", {about: aboutContent})
+// });
+//
+// app.get("/contact", function(req, res){
+//   res.render("contact", {contact: contactContent})
+// });
 
 app.get("/compose", function(req, res){
   res.render("compose");
@@ -72,7 +76,8 @@ app.get("/compose", function(req, res){
 app.post("/compose", function(req, res){
   const post = new Blogs({
     title: req.body.postTitle,
-    body: req.body.postBody
+    body: req.body.postBody,
+    image: req.body.postImage
   });
   post.save();
   res.redirect("/");
