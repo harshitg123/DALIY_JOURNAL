@@ -91,3 +91,29 @@
   margin: 50px auto;
   width: 800px;
 }
+
+.card-body .foot{
+  margin-top: 12px;
+}
+
+.title{
+  width: 75%;
+}
+
+.c-select{
+  width: 20%;
+  position: absolute;
+  top: 196px;
+  right: 111px;
+}
+
+.c-card{
+
+}
+
+.c-heading{
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 30px;
+}

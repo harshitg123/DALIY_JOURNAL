@@ -1,4 +1,3 @@
-
 require('dotenv').config();
 
 const express = require("express");
@@ -33,12 +32,24 @@ const blogsSchema = {
   image: {
     type: String,
     required: true
+  },
+  category:{
+    type: String,
+    required: true
   }
 }
 
 // Model
 const Blogs = mongoose.model('Blog',blogsSchema);
 
+app.get("/", function(req, res){
+
+  Blogs.find({}, function(err, foundData){
+    if(!err){
+      res.render("home", {home: homeStartingContent, posts: foundData});
+    }
+  })
+});
 
 app.get("/posts/:post", function(req, res){
   Blogs.find({}, function(err, foundData){
@@ -52,14 +63,6 @@ app.get("/posts/:post", function(req, res){
   })
 });
 
-app.get("/", function(req, res){
-
-    Blogs.find({}, function(err, foundData){
-     if(!err){
-     res.render("home", {home: homeStartingContent, posts: foundData});
-    }
-  })
-});
 
 // app.get("/about", function(req, res){
 //   res.render("about", {about: aboutContent})
@@ -74,18 +77,20 @@ app.get("/compose", function(req, res){
 });
 
 app.post("/compose", function(req, res){
+
+  // console.log(req.body);
+
   const post = new Blogs({
     title: req.body.postTitle,
     body: req.body.postBody,
-    image: req.body.postImage
+    image: req.body.postImage,
+    category: req.body.selector
   });
+
   post.save();
   res.redirect("/");
 
 });
-
-
-
 
 let port = process.env.PORT;
 console.log(port);
