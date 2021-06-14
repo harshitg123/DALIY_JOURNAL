@@ -1,34 +1,78 @@
-<%- include("partials/header") -%>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
 
-<h1>Compose</h1>
+</html>
 
-<form class="" action="/compose" method="post">
+<head>
+  <meta charset="utf-8">
+  <title>Daily Journal</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/styles/a11y-dark.min.css">
+  <link rel="stylesheet" href="/css/styles.css">
+  <script src="https://use.fontawesome.com/5d7b702657.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/languages/go.min.js"></script>
 
-  <div class="mb-3">
-    <label class="form-label">Title</label>
-    <input type="text" class="title form-control" name="postTitle">
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container">
+      <a class="navbar-brand" href="/">DAILY JOURNAL</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="/">HOME</a></li>
+          <li class="nav-item"><a class="nav-link" href="/about">ABOUT US</a></li>
+          <li class="nav-item"><a class="nav-link" href="/contact">CONTACT US</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <script src="ckeditor/ckeditor.js" charset="utf-8"></script>
+</head>
+
+<body>
+
+  <div class="container content">
+
+    <h1>Compose</h1>
+
+    <form class="" action="/compose" method="post">
+
+      <div class="mb-3">
+        <label class="form-label">Title</label>
+        <input type="text" class="title form-control" name="postTitle">
+      </div>
+
+      <select class="form-select c-select" name="selector" aria-label="Default select example">
+        <option selected>Choose Category</option>
+        <option name="Projects">Projects</option>
+        <option name="Technology">Technology</option>
+        <option name="Travel">Travel</option>
+      </select>
+
+      <div class="mb-3">
+        <label class="form-label">Image URL</label>
+        <input placeholder="Please add 600x280(aprox) image URL for better view." type="text" class="form-control" name="postImage">
+      </div>
+
+      <div class="mb-3">
+        <label>Post</label>
+        <textarea class="editor1" id="editor1" rows="10" cols="80" name="postBody">Your Post!</textarea>
+      </div>
+
+      <button type="submit" class="c-button compose-btn btn btn-primary">Publish</button>
+    </form>
+
   </div>
 
-  <select class="form-select c-select" name="selector" aria-label="Default select example" >
-    <option selected>Choose Category</option>
-    <option name="Projects">Projects</option>
-    <option name="Technology">Technology</option>
-    <option name="Personal">Personal</option>
-  </select>
-
-  <div class="mb-3">
-    <label class="form-label">Image URL</label>
-    <input placeholder="Please add 600x280(aprox) image URL for better view." type="text" class="form-control" name="postImage">
+  <div class="footer">
+    <h3 class="footer-msg">Find me on social media platforms</h3>
+    <p class="copyright">© 2021 Harshit Gupta.</p>
   </div>
 
-  <div class="mb-3">
-    <label>Post</label>
-    <textarea class="form-control" rows="5" name="postBody"></textarea>
-  </div>
+  <script src="ckeditor/script.js" charset="utf-8"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.0.1/highlight.min.js"></script>
+  <script>hljs.highlightAll();</script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 
-  <button type="submit" class="c-button compose-btn btn btn-primary">Publish</button>
-</form>
-
-</div>
-
-<%- include("partials/footer") -%>
+</body>

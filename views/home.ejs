@@ -2,72 +2,103 @@
 
 <% let projectSet = false %>
 <% let technologySet = false %>
+<% let personalSet = false %>
 
 <div class="container">
   <div class="row row-cols-2">
-  <% posts.forEach(function(post){ %>
-  <% let postContent = post.body %>
+    <% posts.forEach(function(post){ %>
+    <% let postContent = post.body %>
 
-          <% if(post.category === "Projects") { %>
+    <% if(post.category === "Projects") { %>
 
-            <% if(projectSet === false) { %>
-                <h1 class="c-heading"><%= post.category %></h1>
-                <% projectSet = true %>
-           <% } %>
-            <div class="c-card col card mb-3">
-              <img class="tech-img card-img-top" src= <%= post.image %>>
-              <div class="card-body">
-                <h3 class="card-title"><%= post.title %></h3>
-                <% if(post.title.length > 45){ %>
-                  <p class="card-text"><%= post.body.substring(0, 100) + "........" %></p>
-                  <a href="/posts/<%= post._id %>">
-                     <button class="c-button btn btn-primary">Read More</button>
-                 </a>
-                <% } else if(postContent.length > 100){ %>
-                    <p class="card-text"><%= post.body.substring(0, 180) + "........" %></p>
-                    <a href="/posts/<%= post._id %>">
-                       <button class="c-button btn btn-primary">Read More</button>
-                   </a>
-                <% }else{ %>
-                  <p class="card-text"><%= postContent %></p>
-                <% } %>
-                <p class="foot card-text">
-                  <small class="text-muted">Last updated 3 mins ago</small>
-                </p>
-              </div>
-            </div>
+    <% if(projectSet === false) { %>
+    <h1 class="c-heading"><%= post.category %></h1>
+    <% projectSet = true %>
+    <% } %>
 
-<% } else if(post.category === "Technology"){ %>
+    <div class="c-card col card mb-3">
+      <img class="tech-img card-img-top" src=<%= post.image %>>
+      <div class="card-body">
+        <h3 class="card-title"><%= post.title %></h3>
+        <% if(post.title.length > 45){ %>
+        <p class="card-text"><%- post.body.substring(0, 100) + "........" %></p>
+        <a href="/posts/<%= post._id %>">
+          <button class="c-button btn btn-primary">Read More</button>
+        </a>
+        <% } else if(postContent.length > 100){ %>
+        <p class="card-text"><%- post.body.substring(0, 100) + "........" %></p>
+        <a href="/posts/<%= post._id %>">
+          <button class="c-button btn btn-primary">Read More</button>
+        </a>
+        <% }else{ %>
+        <p class="card-text"><%- postContent %></p>
+        <% } %>
+        <p class="foot card-text">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+      </div>
+    </div>
 
-          <% if(technologySet === false) { %>
-              <h1 class="c-heading"><%= post.category %></h1>
-              <% technologySet = true %>
-         <% } %>
+    <% } else if(post.category === "Technology"){ %>
 
-          <div class="c-card col card mb-3">
-            <img class="tech-img card-img-top" src= <%= post.image %>>
-            <div class="card-body">
-              <h3 class="card-title"><%= post.title %></h3>
-              <% if(post.title.length > 45){ %>
-                <p class="card-text"><%= post.body.substring(0, 100) + "........" %></p>
-                <a href="/posts/<%= post._id %>">
-                   <button class="c-button btn btn-primary">Read More</button>
-               </a>
-              <% } else if(postContent.length > 100){ %>
-                  <p class="card-text"><%= post.body.substring(0, 180) + "........" %></p>
-                  <a href="/posts/<%= post._id %>">
-                     <button class="c-button btn btn-primary">Read More</button>
-                 </a>
-              <% }else{ %>
-                <p class="card-text"><%= postContent %></p>
-              <% } %>
-              <p class="foot card-text">
-                <small class="text-muted">Last updated 3 mins ago</small>
-              </p>
-            </div>
-          </div>
+    <% if(technologySet === false) { %>
+    <h1 class="c-heading"><%= post.category %></h1>
+    <% technologySet = true %>
+    <% } %>
 
-  <% } %>
+    <div class="c-card col card mb-3">
+      <img class="tech-img card-img-top" src=<%= post.image %>>
+      <div class="card-body">
+        <h3 class="card-title"><%= post.title %></h3>
+        <% if(post.title.length > 45){ %>
+        <p class="card-text"><%- post.body.substring(0, 100) + "........" %></p>
+        <a href="/posts/<%= post._id %>">
+          <button class="c-button btn btn-primary">Read More</button>
+        </a>
+        <% } else if(postContent.length > 100){ %>
+        <p class="card-text"><%- post.body.substring(0, 100) + "........" %></p>
+        <a href="/posts/<%= post._id %>">
+          <button class="c-button btn btn-primary">Read More</button>
+        </a>
+        <% }else{ %>
+        <p class="card-text"><%- postContent %></p>
+        <% } %>
+        <p class="foot card-text">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+      </div>
+    </div>
+
+    <% } else {%>
+    <% if(personalSet === false) { %>
+    <h1 class="c-heading"><%= post.category %></h1>
+    <% personalSet = true %>
+    <% } %>
+
+    <div class="c-card col card mb-3">
+      <img class="tech-img card-img-top" src=<%= post.image %>>
+      <div class="card-body">
+        <h3 class="card-title"><%= post.title %></h3>
+        <% if(post.title.length > 45){ %>
+        <p class="card-text"><%- post.body.substring(0, 100) + "........" %></p>
+        <a href="/posts/<%= post._id %>">
+          <button class="c-button btn btn-primary">Read More</button>
+        </a>
+        <% } else if(postContent.length > 100){ %>
+        <p class="card-text"><%- post.body.substring(0, 100) + "........" %></p>
+        <a href="/posts/<%= post._id %>">
+          <button class="c-button btn btn-primary">Read More</button>
+        </a>
+        <% }else{ %>
+        <p class="card-text"><%- postContent %></p>
+        <% } %>
+        <p class="foot card-text">
+          <small class="text-muted">Last updated 3 mins ago</small>
+        </p>
+      </div>
+    </div>
+
+    <%}%>
 
   <% }) %>
   </div>

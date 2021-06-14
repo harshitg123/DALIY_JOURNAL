@@ -107,13 +107,13 @@
   right: 111px;
 }
 
-.c-card{
-
-}
+/* .ck{
+  height: 200px;
+} */
 
 .c-heading{
   position: relative;
   width: 100%;
   text-align: center;
-  margin-bottom: 30px;
+  margin: 60px 0 30px;
 }

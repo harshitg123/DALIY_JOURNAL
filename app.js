@@ -14,10 +14,16 @@ const app = express();
 
 app.set('view engine', 'ejs');
 
-app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.urlencoded({
+  extended: true
+}));
 app.use(express.static("public"));
 
-mongoose.connect(process.env.MONGO_ATLAS,{useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false});
+mongoose.connect(process.env.MONGO_ATLAS, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  useFindAndModify: false
+});
 
 // Schema
 const blogsSchema = {
@@ -33,30 +39,41 @@ const blogsSchema = {
     type: String,
     required: true
   },
-  category:{
+  category: {
     type: String,
     required: true
   }
 }
 
 // Model
-const Blogs = mongoose.model('Blog',blogsSchema);
+const Blogs = mongoose.model('Blog', blogsSchema);
 
-app.get("/", function(req, res){
-
-  Blogs.find({}, function(err, foundData){
-    if(!err){
-      res.render("home", {home: homeStartingContent, posts: foundData});
+app.get("/", function(req, res) {
+  Blogs.find({}, null, {
+    sort: {
+      category: 1
     }
-  })
+  }, function(err, foundData) {
+    console.log(foundData);
+    if (!err) {
+      res.render("home", {
+        home: homeStartingContent,
+        posts: foundData
+      });
+    }
+  });
 });
 
-app.get("/posts/:post", function(req, res){
-  Blogs.find({}, function(err, foundData){
-    if(!err){
-      foundData.forEach(function(post){
-        if(_.lowerCase(post._id) === _.lowerCase(req.params.post)){
-          res.render("post", {postTitle:post.title, postBody:post.body, postImage: post.image});
+app.get("/posts/:post", function(req, res) {
+  Blogs.find({}, function(err, foundData) {
+    if (!err) {
+      foundData.forEach(function(post) {
+        if (_.lowerCase(post._id) === _.lowerCase(req.params.post)) {
+          res.render("post", {
+            postTitle: post.title,
+            postBody: post.body,
+            postImage: post.image
+          });
         }
       })
     }
@@ -72,13 +89,11 @@ app.get("/posts/:post", function(req, res){
 //   res.render("contact", {contact: contactContent})
 // });
 
-app.get("/compose", function(req, res){
+app.get("/compose", function(req, res) {
   res.render("compose");
 });
 
-app.post("/compose", function(req, res){
-
-  // console.log(req.body);
+app.post("/compose", function(req, res) {
 
   const post = new Blogs({
     title: req.body.postTitle,
