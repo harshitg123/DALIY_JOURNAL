@@ -54,7 +54,6 @@ app.get("/", function(req, res) {
       category: 1
     }
   }, function(err, foundData) {
-    console.log(foundData);
     if (!err) {
       res.render("home", {
         home: homeStartingContent,
@@ -81,13 +80,13 @@ app.get("/posts/:post", function(req, res) {
 });
 
 
-// app.get("/about", function(req, res){
-//   res.render("about", {about: aboutContent})
-// });
-//
-// app.get("/contact", function(req, res){
-//   res.render("contact", {contact: contactContent})
-// });
+app.get("/about", function(req, res){
+  res.render("about", {about: aboutContent})
+});
+
+app.get("/contact", function(req, res){
+  res.render("contact", {contact: contactContent})
+});
 
 app.get("/compose", function(req, res) {
   res.render("compose");

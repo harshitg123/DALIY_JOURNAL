@@ -1,5 +1,10 @@
 <%- include("partials/header") -%>
 
+<a class="compose" href="/compose">
+  <button class="c-button btn btn-primary">Compose</button>
+</a>
+
+
 <% let projectSet = false %>
 <% let technologySet = false %>
 <% let personalSet = false %>
@@ -12,7 +17,7 @@
     <% if(post.category === "Projects") { %>
 
     <% if(projectSet === false) { %>
-    <h1 class="c-heading"><%= post.category %></h1>
+    <h1 id="project" class="c-heading"><%= post.category %></h1>
     <% projectSet = true %>
     <% } %>
 
@@ -42,7 +47,7 @@
     <% } else if(post.category === "Technology"){ %>
 
     <% if(technologySet === false) { %>
-    <h1 class="c-heading"><%= post.category %></h1>
+    <h1 id="technology" class="c-heading"><%= post.category %></h1>
     <% technologySet = true %>
     <% } %>
 
@@ -71,7 +76,7 @@
 
     <% } else {%>
     <% if(personalSet === false) { %>
-    <h1 class="c-heading"><%= post.category %></h1>
+    <h1 id="travel" class="c-heading"><%= post.category %></h1>
     <% personalSet = true %>
     <% } %>
 

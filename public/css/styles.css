@@ -8,14 +8,15 @@
     padding-bottom: 70px;
 }
 
+
 .navbar {
-    padding-top: 20px;
-    padding-bottom: 23px;
-    border: 0;
-    border-radius: 0;
-    margin-bottom: 0;
-    font-size: 12px;
-    letter-spacing: 5px;
+  padding-top: 20px;
+  padding-bottom: 23px;
+  border: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+  font-size: 12px;
+  letter-spacing: 5px;
 }
 .navbar-nav  li a:hover {
     color: #1abc9c !important;
@@ -34,7 +35,7 @@
 }
 
 .footer-msg{
-  padding: 25px 0 0;
+  padding: 35px 0 0;
   color: gray;
   font-size: 1.2rem;
   text-align: center;
@@ -104,16 +105,36 @@
   width: 20%;
   position: absolute;
   top: 196px;
-  right: 111px;
+  right: 123px;
 }
 
-/* .ck{
-  height: 200px;
-} */
+.social-img{
+  width: 30px;
+  margin: 0 15px;
+  opacity: 0.4;
+}
+
+.social-img:hover{
+  opacity: 1;
+}
+
+.social{
+  text-align: center;
+  margin: 40px 20%;
+}
+
+.siz{
+  width: 35px;
+}
 
 .c-heading{
   position: relative;
   width: 100%;
   text-align: center;
   margin: 60px 0 30px;
+}
+
+.compose{
+  position: absolute;
+  right: 145px;
 }
