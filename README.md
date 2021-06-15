@@ -3,4 +3,4 @@
 
 <h3> PROJECT IS UNDER CONSTRUCTION </h3>
 
-<img width="200" src="image/construction.png" ></img>
+<img width="400" src="images/construction.png" ></img>
