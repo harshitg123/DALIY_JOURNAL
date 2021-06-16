@@ -80,11 +80,14 @@ app.get("/posts/:post", function(req, res) {
 });
 
 
-app.get("/about", function(req, res){
-  res.render("about", {about: aboutContent})
+app.get("/sign-in", function(req, res){
+  // console.log("login page");
+  res.render("login");
 });
 
 app.get("/contact", function(req, res){
+  // Logic for checking if person is login or not
+
   res.render("contact", {contact: contactContent})
 });
 

@@ -1,13 +1,11 @@
-
-.content{
+.content {
   margin-top: 25px;
 }
 
 .container-fluid {
-    padding-top: 70px;
-    padding-bottom: 70px;
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
-
 
 .navbar {
   padding-top: 20px;
@@ -18,23 +16,24 @@
   font-size: 12px;
   letter-spacing: 5px;
 }
-.navbar-nav  li a:hover {
-    color: #1abc9c !important;
+
+.navbar-nav li a:hover {
+  color: #1abc9c !important;
 }
 
-.nav-item{
+.nav-item {
   font-weight: bold;
   padding-left: 8px;
 }
 
 .footer {
-	width: 100%;
+  width: 100%;
   margin-top: 60px;
-	background-color: black;
+  background-color: black;
   height: 250px;
 }
 
-.footer-msg{
+.footer-msg {
   padding: 35px 0 0;
   color: gray;
   font-size: 1.2rem;
@@ -44,22 +43,22 @@
 .copyright {
   text-align: center;
   margin: 50px 40% 0;
-	font-size: 12px;
+  font-size: 12px;
   color: #fff;
 }
 
-.readMore{
+.readMore {
   text-decoration: none;
   font-weight: 500;
   color: #28ABB9;
 }
 
-.readMore:hover{
+.readMore:hover {
   color: #28ABB9;
   text-decoration: underline;
 }
 
-.card{
+.card {
   width: 47%;
   margin: 10px 15px;
   padding: 0;
@@ -67,74 +66,122 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-.tech-img{
+.tech-img {
   width: 609.1px;
   height: 280px;
 }
 
-.c-button{
+.c-button {
   border-radius: 1px;
   border: 1px solid black;
   background-color: transparent;
   color: black;
 }
 
-.compose-btn{
+.compose-btn {
   margin-bottom: 50px;
 }
 
-.c-button:hover{
+.c-button:hover {
   background-color: black;
   color: white;
 }
 
-.single-post-img{
+.single-post-img {
   margin: 50px auto;
   width: 800px;
 }
 
-.card-body .foot{
+.card-body .foot {
   margin-top: 12px;
 }
 
-.title{
+.title {
   width: 75%;
 }
 
-.c-select{
+.c-select {
   width: 20%;
   position: absolute;
   top: 196px;
   right: 123px;
 }
 
-.social-img{
+.social-img {
   width: 30px;
   margin: 0 15px;
   opacity: 0.4;
 }
 
-.social-img:hover{
+.social-img:hover {
   opacity: 1;
 }
 
-.social{
+.social {
   text-align: center;
   margin: 40px 20%;
 }
 
-.siz{
+.siz {
   width: 35px;
 }
 
-.c-heading{
+.c-heading {
   position: relative;
   width: 100%;
   text-align: center;
   margin: 60px 0 30px;
 }
 
-.compose{
+.compose {
   position: absolute;
   right: 145px;
+}
+
+.scrollToTop {
+  position: fixed;
+  right: 40px;
+  bottom: 40px;
+  height: 50px;
+  width: 50px;
+  border-radius: 50px;
+  border: 0;
+  outline: none !important;
+  background-color: #282828;
+}
+
+.scrollToTop:active {
+  background-color: #696969;
+}
+
+.arrow {
+  color: white;
+  margin-top: 5px;
+}
+
+.img {
+  background-size: 100%;
+  background-position: 0 15%;
+  background-repeat: no-repeat;
+}
+
+.login {
+  text-align: center;
+}
+
+.login-form {
+  margin: 200px;
+  padding: 100px;
+}
+
+.disp {
+  display: block;
+  border-radius: 50px;
+  margin: 20px;
+  text-align: center;
+  border: 0;
+}
+
+.transparent {
+  background-color: rgba(255, 255, 255, 0.2);
 }

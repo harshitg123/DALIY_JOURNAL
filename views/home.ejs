@@ -1,8 +1,13 @@
 <%- include("partials/header") -%>
-
-<a class="compose" href="/compose">
+<div class="container content">
+<form class="compose" action="/compose" method="get">
   <button class="c-button btn btn-primary">Compose</button>
-</a>
+</form>
+
+<button id="scroll" class="scrollToTop">
+  <i class="material-icons arrow"> arrow_upward </i>
+</button>
+
 
 
 <% let projectSet = false %>
