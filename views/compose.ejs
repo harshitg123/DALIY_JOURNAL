@@ -1,5 +1,5 @@
-
 <%- include("partials/header") -%>
+
 <div class="container content">
   <div class="container content">
 
@@ -9,7 +9,7 @@
 
       <div class="mb-3">
         <label class="form-label">Title</label>
-        <input type="text" class="title form-control" name="postTitle" placeholder="Title of your post">
+        <input type="text" class="spacing form-control" name="postTitle" placeholder="Title of your post">
       </div>
 
       <select class="form-select c-select" name="selector" aria-label="Default select example">
@@ -25,13 +25,22 @@
       </div>
 
       <div class="mb-3">
+        <label class="form-label">Monetization</label>
+        <div id="Wraping">
+          <input class="spacing form-control" placeholder="Past product URL" type="text" name="products[]">
+        </div>
+        <button id="btn-add" class="c-button compose-btn btn " type="button" name="add">Add</button>
+        <button id="btn-remove" class="c-button compose-btn btn " type="button" name="remove">Remove</button>
+      </div>
+
+      <div class="mb-3">
         <label>Post</label>
         <textarea class="editor1" id="editor1" rows="10" cols="80" name="postBody"></textarea>
       </div>
 
-      <button type="submit" class="c-button compose-btn btn btn-primary">Publish</button>
+      <button type="submit" class="c-button compose-btn btn">Publish</button>
     </form>
 
   </div>
 
-<%- include("partials/footer") -%>
+  <%- include("partials/footer") -%>

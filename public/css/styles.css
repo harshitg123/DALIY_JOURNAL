@@ -96,8 +96,9 @@
   margin-top: 12px;
 }
 
-.title {
+.spacing {
   width: 75%;
+  margin: 0 0 6px 0;
 }
 
 .c-select {
@@ -163,6 +164,8 @@
   background-size: 100%;
   background-position: 0 15%;
   background-repeat: no-repeat;
+  background-color: orange;
+  z-index: -1;
 }
 
 .login {
@@ -178,10 +181,54 @@
   display: block;
   border-radius: 50px;
   margin: 20px;
-  text-align: center;
+  width: 400px;
+  height: 50px;
   border: 0;
+  position: relative;
+  left: 26%;
+  padding: 0 0 0 20px;
+  color: white;
 }
 
 .transparent {
   background-color: rgba(255, 255, 255, 0.2);
+}
+
+.account{
+  margin: 0 5px;
+  /* display: none; */
+}
+
+.amazonOffers{
+  position: absolute;
+  top: 214px;
+  right: 100px;
+  /* border: 1px solid black; */
+  height: auto;
+  width: 495px;
+  padding: 0 2%;
+}
+
+.products{
+  text-align: center;
+}
+
+iframe{
+  margin: 30px 10px;
+}
+
+#btn-add{
+  position: absolute;
+  right: 290px;
+  top: 367px;
+  width: 125px;
+  border-radius: 2px;
+}
+
+#btn-remove{
+  position: absolute;
+  right: 124px;
+  top: 367px;
+  width: 125px;
+  border-radius: 2px;
 }

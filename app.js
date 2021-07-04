@@ -80,15 +80,15 @@ app.get("/posts/:post", function(req, res) {
 });
 
 
-app.get("/sign-in", function(req, res){
+app.get("/login", function(req, res){
   // console.log("login page");
   res.render("login");
 });
 
-app.get("/contact", function(req, res){
+app.get("/signup", function(req, res){
   // Logic for checking if person is login or not
 
-  res.render("contact", {contact: contactContent})
+  res.render("signup")
 });
 
 app.get("/compose", function(req, res) {
