@@ -168,15 +168,6 @@
   z-index: -1;
 }
 
-.login {
-  text-align: center;
-}
-
-.login-form {
-  margin: 200px;
-  padding: 100px;
-}
-
 .disp {
   display: block;
   border-radius: 50px;
@@ -210,6 +201,7 @@
 }
 
 .products{
+  margin: 50px 0 0;
   text-align: center;
 }
 
@@ -218,17 +210,96 @@ iframe{
 }
 
 #btn-add{
+  border: 1px solid #ced4da;
   position: absolute;
-  right: 290px;
-  top: 367px;
-  width: 125px;
-  border-radius: 2px;
+  right: 282px;
+  top: 367.5px;
+  width: 145px;
+  border-radius: 4px;
 }
 
 #btn-remove{
+  border: 1px solid #ced4da;
   position: absolute;
   right: 124px;
-  top: 367px;
-  width: 125px;
-  border-radius: 2px;
+  top: 367.5px;
+  width: 145px;
+  border-radius: 4px;
+}
+
+.c-username{
+  margin-bottom: 20px;
+}
+
+.c-password{
+  margin-bottom: 20px;
+}
+
+.UP{
+  width: 90%;
+  height: 50px;
+  border-radius: 50px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: none;
+}
+
+/* .password{
+  width: 90%;
+  height: 50px;
+  border-radius: 50px;
+  padding: 0 20px;
+  font-size: 1rem;
+  border: none;
+} */
+
+.login-button{
+  width: 90%;
+  background-color: #75A99D;
+  color: #EDEDED;
+  /* margin-left: 10px; */
+  border-radius: 50px;
+}
+
+.login-button:hover{
+  background-color: #90BAB0;
+  color: #EDEDED;
+}
+
+.admin{
+  position: absolute;
+  top:130px;
+  left: 710px;
+  font-family: 'Open Sans', sans-serif;
+  color:  #535353;
+}
+
+.login-btn{
+  margin-top: 33px;
+}
+
+.home{
+  color: #90BAB0;
+  position: absolute;
+  top: 600px;
+  left: 800px;
+}
+
+.home:hover{
+  color: #535353;
+  transition: all 0.5s;
+}
+
+#login{
+  width: 30%;
+  position: absolute;
+  top:253px;
+  left: 610px;
+}
+
+#signup{
+  width: 30%;
+  position: absolute;
+  top:240px;
+  left: 600px;
 }

@@ -5,6 +5,7 @@ let inpName = 0;
 const se = document.querySelector(".scrollToTop");
 
 document.addEventListener('DOMContentLoaded', function() {
+  
   se.addEventListener("click", function() {
     window.scrollTo({
       top: 0,
